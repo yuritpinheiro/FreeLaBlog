@@ -1,0 +1,31 @@
+<app-loading *ngIf="loadingComments || loadingImages || loadingCategory"></app-loading>
+
+<div *ngIf="!(loadingComments || loadingImages || loadingCategory)">
+  <div class="post-preview">
+    <div>
+      <h2 class="post-title" [textContent]="post.title">
+      </h2>
+      <h3 class="post-subtitle" [textContent]="post.subtitle">
+      </h3>
+      <h4 class="post-category"><span [textContent]="category.name"></span></h4>
+      <p [textContent]="post.text">
+      </p>
+    </div>
+
+    <swiper [config]="config" [(index)]="index" [useSwiperClass]="true">
+      <img *ngFor="let image of images" src="{{image.url}}">
+    </swiper>
+
+    <p class="post-meta">Posted on <span [textContent]="post.postDatetime"></span></p>
+  </div>
+
+  <h3>Comments</h3>
+  <div class="comments" *ngIf="comments && comments.length > 0">
+    <div *ngFor="let comment of comments; let last = last">
+      <app-preview-comment [comment]="comment" [last]="last"></app-preview-comment>
+    </div>
+  </div>
+
+  <app-comment-form [postId]="post.id" (commented)="onCommented($event)"></app-comment-form>
+
+</div>

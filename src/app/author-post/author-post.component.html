@@ -1,0 +1,29 @@
+
+<!-- Main Content -->
+<div class="row" id="forms">
+    <div class="col-lg-10 col-md-12 mx-auto">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <app-form-post [categories]="categories"  [post]="post" (newPostEmitter)="getNewPost($event)"></app-form-post>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <app-form-category [category]="category" (newCategoryEmitter)="getNewCategory($event)"></app-form-category>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-10 col-md-12 mx-auto">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <app-loading *ngIf="loadingPosts"></app-loading>
+        <app-list-post *ngIf="!loadingPosts" (editPostEmitter)="getEditPost($event)"></app-list-post>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <app-loading *ngIf="loadingCategories"></app-loading>
+        <app-list-category *ngIf="!loadingCategories" [categories]="categories" (editCategoryEmitter)="getEditCategory($event)"></app-list-category>
+      </div>
+    </div>
+  </div>
+</div>

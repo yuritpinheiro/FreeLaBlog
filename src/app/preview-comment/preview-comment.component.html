@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-10 col-md-10 mx-auto">
+    <div class="comment-preview">
+      <p class="comment-message" [textContent]="comment.message">
+      </p>
+      <p class="comment-meta">
+        <span [textContent]="comment.name"></span>
+        &nbsp;
+        <span class="comment-email" [textContent]="comment.email"></span>
+        <br>
+        <span class="comment-ip" [textContent]="comment.ip"></span>
+        &nbsp;
+        <span [textContent]="comment.commentDatetime"></span>
+      </p>
+      <hr *ngIf="!last">
+    </div>
+  </div>
+</div>

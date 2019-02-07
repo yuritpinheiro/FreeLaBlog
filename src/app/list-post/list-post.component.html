@@ -1,0 +1,19 @@
+<div *ngFor="let post of posts; let first = first; let last = last">
+  <hr *ngIf="first">
+  <div class="row">
+    <div class="col-lg-8 vertical-align">
+      {{post.title}}
+    </div>
+    <div class="col vertical-align" style="justify-content: flex-end;">
+      <div class="btn-group" role="group">
+        <button class="btn btn-secondary btn-sm" role="button" (click)="editPost(post)">
+          <i class="fa fa-pencil"></i>
+        </button>
+        <button class="btn btn-danger" role="button" (click)="deletePost(post.id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
