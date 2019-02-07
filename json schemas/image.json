@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Image",
+    "description": "A image at a post in a regular WebBlog",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for a image",
+            "type": "integer",
+            "exclusiveMinimum": 0
+        },
+        "uri": {
+            "description": "The URI of a image",
+            "type": "string"
+        },
+        "description": {
+            "description": "The description for the image",
+            "type": "string"
+        },
+        "postId": {
+            "description": "Identifier for the corresponding post of the image",
+            "type": "integer",
+            "exclusiveMinimum": 0
+        }
+    },
+    "required": ["id"]
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Post",
+    "description": "A post in a regular WebBlog",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for a post",
+            "type": "integer",
+            "exclusiveMinimum": 0
+        },
+        "title": {
+            "description": "The title of a post",
+            "type": "string"
+        },
+        "subtitle": {
+            "description": "The subtitle of a post",
+            "type": "string"
+        },
+        "text": {
+            "description": "The content of a post",
+            "type": "string"
+        },
+        "post_date_time": {
+            "description": "String containing the date and time of post's publication",
+            "type": "string"
+        },
+        "categoryId": {
+            "description": "Identifier for the corresponding category of the post",
+            "type": "integer",
+            "exclusiveMinimum": 0            
+        }
+    },
+    "required": ["id"]
+}

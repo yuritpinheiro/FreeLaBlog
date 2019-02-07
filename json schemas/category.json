@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Category",
+    "description": "A post in a regular WebBlog",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for a post",
+            "type": "integer",
+            "exclusiveMinimum": 0
+        },
+        "name": {
+            "description": "The name for a category",
+            "type": "string"
+        },
+        "description": {
+            "description": "The description for a category",
+            "type": "string"
+        }
+    },
+    "required": ["id"]
+}

@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Comment",
+    "description": "A comment made at a post in a regular WebBlog",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for a comment",
+            "type": "integer",
+            "exclusiveMinimum": 0
+        },
+        "name": {
+            "description": "The author name of a comment",
+            "type": "string"
+        },
+        "email": {
+            "description": "The contact email for the comment author",
+            "type": "string"
+        },
+        "message": {
+            "description": "The content of a comment",
+            "type": "string"
+        },
+        "ip": {
+            "description": "Author's IP",
+            "type": "string"
+        },
+        "comment_date_time": {
+            "description": "String containing the date and time of comment's publication",
+            "type": "string"
+        },
+        "postId": {
+            "description": "Identifier for the corresponding post of the comment",
+            "type": "integer",
+            "exclusiveMinimum": 0
+        }
+    },
+    "required": ["id"]
+}
