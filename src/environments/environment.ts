@@ -10,6 +10,10 @@ export const environment = {
     comments: 'comments',
     images: 'images',
     categories: 'categories'
+  },
+  auth: {
+    login: 'admin',
+    password: 'K5uGP8m'
   }
 };
 

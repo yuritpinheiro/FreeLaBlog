@@ -26,6 +26,7 @@ import { FormPostComponent } from './form-post/form-post.component';
 import { FormCategoryComponent } from './form-category/form-category.component';
 import { ListCategoryComponent } from './list-category/list-category.component';
 import { ListPostComponent } from './list-post/list-post.component';
+import {AuthService} from './auth/auth.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -63,8 +64,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   providers: [
     {
       provide: SWIPER_CONFIG,
-      useValue: DEFAULT_SWIPER_CONFIG
-    }
+      useValue: DEFAULT_SWIPER_CONFIG,
+    },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

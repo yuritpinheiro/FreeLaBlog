@@ -9,20 +9,40 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
-      <a class="navbar-brand pointer" routerLink="home">Free La Blog</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand pointer" routerLink="home">Free La Blog</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fa fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+    </button>
+
+
+    <div *ngIf="!isLogged" class="collapse navbar-collapse" id="logInResponsive">
+      <form class="form-inline ml-auto">
+        <label class="sr-only" for="inlineFormInputLogin">User</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputLogin" placeholder="User" [(ngModel)]="login" name="login">
+
+        <label class="sr-only" for="inlineFormInputPassword">Username</label>
+        <input type="password" class="form-control mb-2 mr-sm-2" id="inlineFormInputPassword" placeholder="Password" [(ngModel)]="password" name="password">
+
+        <button type="button" class="btn-sm btn-primary mb-2" (click)="logIn()">Login</button>
+      </form>
+    </div>
+
+    <div *ngIf="isLogged" class="collapse navbar-collapse" id="logOutResponsive">
+      <form class="form-inline ml-auto">
+        <button type="button" class="btn-sm btn-primary mb-2" (click)="logOut()">Logout</button>
+      </form>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link pointer" routerLink="home">Home</a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
           <a class="nav-link pointer" routerLink="author-post">Manage</a>
-          </li>
+        </li>
       </ul>
-      </div>
+    </div>
   </div>
-  </nav>
+</nav>

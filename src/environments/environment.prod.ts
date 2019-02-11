@@ -1,9 +1,14 @@
 export const environment = {
-  production: false,
+  production: true,
   api: {
-    base: 'https://jsonplaceholder.typicode.com/',
+    base: 'http://localhost:3000/',
     posts: 'posts',
     comments: 'comments',
-    images: 'photos',
+    images: 'images',
+    categories: 'categories'
+  },
+  auth: {
+    login: 'admin',
+    password: 'K5uGP8m'
   }
 };
