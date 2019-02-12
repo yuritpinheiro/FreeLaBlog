@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve & json-server --watch db.json && fg",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,7 +24,8 @@
     "ngx-moment": "^3.0.1",
     "ngx-swiper-wrapper": "^6.3.0",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "json-server": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.1",
